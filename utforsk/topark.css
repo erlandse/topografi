@@ -1,0 +1,127 @@
+/*alle*/
+
+body {
+   background-color: #FFFFFF;
+   margin:0px;
+   font-family:Verdena,Geneva,sans-serif;
+   font-size: 14px;
+
+}
+
+
+#tableHeader{
+  background-color:#F49800;
+  color:#FFFFFF;
+  width:100%;
+  border-spacing: 0px;
+  
+}
+
+.divIndent{
+  margin-left:60px;
+  margin-right:60px;
+
+//  background-color:#EEEEEE;
+
+}
+
+#theme{
+ font-size: 130%;
+}
+
+#footer{
+  margin-left:15px;
+  margin-right:15px;
+
+}
+
+.tableBody{
+  margin-left: 60px; 
+  margin-right: auto;
+
+  border-collapse:separate; 
+/*  border-spacing: 20px;*/
+
+}
+
+	.selectClass{
+		font-size: 100%;
+	}
+	
+	.textAreaClass{
+		font-size: 100%;
+        overflow: auto;		
+		
+	}
+	
+	.textFieldClass{
+		font-size: 100%;
+	}
+	
+	.buttonClass{
+		font-size: 80%;
+	}
+	
+	.checkboxClass{
+	  -ms-transform: scale(2); /* IE */
+	  -moz-transform: scale(2); /* FF */
+	  -webkit-transform: scale(2); /* Safari and Chrome */
+	  -o-transform: scale(2); /* Opera */
+	}
+	
+	.cellLabelClass{
+/*		font-weight:bold;*/
+		font-size: 100%;
+	}
+	
+	.header{
+/*		font-weight:bold;
+		font-size: 150%;*/
+		padding-left: 60px;
+	}
+    
+/*   og her kommer result liste */
+
+.tableClass{
+	margin-left: 60px;
+	margin-right: 10px;
+
+	font-size: 12px;
+	background-color: #FFFFFF;
+    border-spacing: 0px;
+}
+
+.trResult{
+   background-color:#F49800;
+   color: #FFFFFF; 
+}
+
+.thResult{
+  width: 200px;
+  border: 1px solid white;
+}
+
+
+.thResultSmall{
+  width: 150px;
+  border: 1px solid white;
+}
+
+.tdBorder{
+  border: 1px solid black;
+  padding-left:4px;
+
+}
+
+#wrapper {
+width: 1600px;
+margin-left:20px;
+}
+#tableone {
+float: left;
+width: 200px;
+}
+#pdfpage {
+float: right;
+width: 800px;
+}

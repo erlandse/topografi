@@ -1,0 +1,148 @@
+@charset "utf-8";
+/* CSS Document */
+ 
+body{
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+
+   background-color: #FFFFFF; 
+   font-family:lucida grande,tahoma,verdana,arial,sans-serif;    
+   font-size: 12px;
+   
+}
+
+#tableHeader{
+  background-color:#F49800;
+  color:#FFFFFF;
+  width:100%;
+  border-spacing: 0px;
+  
+}
+
+.tableBody{
+  margin-left: 60px; 
+  margin-right: auto;
+
+  border-collapse:separate; 
+/*  border-spacing: 20px;*/
+
+}
+
+
+.gridContainer {
+   margin-left:auto;
+   margin-right:auto;
+   max-width: 810px;
+   padding-top: 0px;
+   font-size:16px;
+   height: 550px;
+   background-color: #FFFFFF;
+	
+}
+
+#zoomLevel {
+  font-size: 12px;
+}
+
+.tableClass{
+  font-size: 14px;
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align:middle;
+}
+
+.container{
+	margin-left: 25px;
+	margin-right: 25px;
+}
+
+.top{
+	width: 100%;
+	height: 30px;
+	margin-left: 0px;
+	margin-right: 0px;
+/*	background-color: #3b5998;
+	background-color: #99ccff;*/
+    background-color: #adc2d7; 
+
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+    font-family:lucida grande,tahoma,verdana,arial,sans-serif;    
+	font-size: 20px;
+    font-weight:900;	
+/*	color: #000000;*/
+	color: #FFFFFF;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin: 0px;
+
+}
+
+#footer {
+
+   margin-left:auto;
+   margin-right:auto;
+	padding-top: 10px;
+	padding-right: 0;
+	padding-bottom: 10px;
+	padding-left: 0;
+	width: 810px;
+ 
+}
+
+.table_footer{
+   margin-left:auto;
+   margin-right:auto;
+   font-size: 12px;
+   
+}
+
+
+ h1 {
+	color: #333;
+	font-size: 1.7em;
+	font-weight: normal;
+	text-align: center;
+	border-top-width: 0.05em;
+	border-left-width: 0.05em;
+	border-top-style: solid;
+	border-left-style: solid;
+	border-top-color: #333;
+	border-left-color: #333;
+	letter-spacing: 0.10em;
+	 }
+
+h2 {
+	font-size: 1.2em;
+	margin-top: 3px;
+	margin-bottom: 3px;
+	text-align: center;
+	font-weight: normal;
+}
+
+h3 {
+	font-size:1.2em;
+	margin-top: 3px;
+	margin-bottom: 3px;
+	text-align:left;
+}
+ 
+h4 {
+	font-size: 1.6em;
+	font-style: normal;
+	margin-top: 0;
+	font-family: Arial;
+	font-weight: lighter;
+}
+p {font-size:0.875em;
+}
+
+
+
+
+

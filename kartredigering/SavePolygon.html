@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Lagre polygon</title>
+	<meta name="generator" content="BBEdit 9.6" />
+    <link href="polygon.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="SavePolygon.js"></script>
+    <script type="text/javascript" src="json2.js"></script>
+    <script type="text/javascript" src="SolrJsonClass.js"></script>
+    <script type="text/javascript" src="aggregations.js"></script>
+    <script type="text/javascript" src="Elastic.js"></script>
+
+</head>
+
+
+<body onload="initialize()">
+<div class="gridContainer"> 
+<table width='100%'class='top'>
+<tr>
+  <td colspan="2" id="logo"><h1 class='top'>Save object</h1></td></tr>
+</table>
+<br><br><br><br><br><br><br><br><br>
+<form action='save.php' method='post' name='myform'>
+<table class='tableClass'>
+  <tr><td>Name of project:</td><td><input type="text" size="60" id="app" name="app"/><select id='appToApp' onchange='changeApp()'></select></td></tr>
+  <tr><td>Title to object:</td><td><input type="text" size="60" id="title" name="title"/></td></tr>
+  <tr><td>Text in info window: </td><td><textarea rows='5' cols="60" id="textcontent" name="textcontent"></textarea></td></tr>
+  <tr><td>Layer:</td><td><input type="text" id='layer' name="layer" size='60'><select id='layersToApp' onchange='changeLayer()'></select></td></tr>
+  <tr><td colspan='2'align="center"><br><input type="button" value="Save" onclick="savePolygon()"/></td></tr>
+</table>  
+<input type='hidden' name='polygon' id='polygon'/>
+<input type='hidden' name='carpetBombing' id='carpetBombing'/>
+<input type='hidden' name='latitude' id='latitude'/>
+<input type='hidden' name='longitude' id='longitude'/>
+<input type='hidden' name='zoom' id='zoom'/>
+<input type='hidden' name='id' id='id'/>
+<input type='hidden' name='elasticdata' id='elasticdata'/>
+</form>
+</div>
+<div id="footer"> <img src="uio_segl.png" alt=""> 
+<table style="float:right;font-size:12px">
+          <tr>
+            <th style="text-align:left;">Responsible for this service</th>
+          </tr>
+          <tr>
+            <td style="text-align:left;"><a href="http://www.usit.uio.no/english/about/organisation/bps/rc/rss/index.html">Research Support Services Group</a></td>
+          </tr>
+          <tr>
+            <td style="text-align:left;">Department for Research Computing</td>
+          </tr>
+ </table>
+      </div>    <!--end#footer--> 
+
+</body>
+</html>

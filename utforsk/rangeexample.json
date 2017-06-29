@@ -1,0 +1,50 @@
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "term": {
+            "fylke": "Buskerud"
+          }
+        },
+        {
+          "range": {
+            "dokumentDato": {
+              "from": "1910-01-01",
+              "to": "2015-02-10"
+            }
+          }
+        }
+      ],
+      "should": [],
+      "must_not": []
+    }
+  },
+  "from": 0,
+  "aggs": {
+    "periods": {
+      "date_histogram": {
+        "field": "dokumentDato",
+        "interval": "3650d",
+        "format": "yyyy",
+        "min_doc_count": 1
+      }
+    },
+    "fylke": {
+      "terms": {
+        "field": "fylke",
+        "order": {
+          "_term": "asc"
+        }
+      }
+    },
+    "kommune": {
+      "terms": {
+        "field": "kommune",
+        "order": {
+          "_term": "asc"
+        }
+      }
+    }
+  }
+}

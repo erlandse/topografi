@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Restricted Files"
+AuthUserFile /var/www/html/morten/topografi/editing/passordfil
+Require valid-user

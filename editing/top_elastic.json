@@ -1,0 +1,150 @@
+{
+  "mappings": {
+    "document": {
+      "properties": {
+        "id": {
+          "type": "keyword",
+          "store": true
+        },
+        "fylke": {
+          "type": "keyword",
+          "store": true
+        },
+        "kommune": {
+          "type": "keyword",
+          "store": true
+        },
+        "gardsnavn": {
+          "type": "keyword",
+          "store": true
+        },
+        "gardsnummer": {
+          "type": "keyword",
+          "store": true
+        },
+        "gardsid": {
+          "type": "keyword",
+          "store": true
+        },
+        "askeladd": {
+          "type": "keyword",
+          "store": true
+        },
+        "urlpath": {
+          "type": "keyword",
+          "store": true
+        },
+        "bruk": {
+          "type": "keyword",
+          "store": true
+        },
+        "periode": {
+          "type": "keyword",
+          "store": true
+        },
+        "dokumenttype": {
+          "type": "keyword",
+          "store": true
+        },
+        "avsender": {
+          "type": "text",
+          "analyzer": "norwegian"
+        },
+        "mottaker": {
+          "type": "text",
+          "analyzer": "norwegian"
+        },
+        "dato": {
+          "type": "date"
+        },
+        "merknad": {
+          "type": "text",
+          "analyzer": "norwegian"
+        },
+        "avskrift": {
+          "type": "text",
+          "analyzer": "norwegian"
+        },
+        "tema": {
+          "type": "text",
+          "analyzer": "norwegian"
+        },
+        "lokation": {
+          "type": "geo_point"
+        },
+        "geofacet": {
+          "type": "keyword",
+          "store": true
+        },
+        "museumsnr": {
+          "type": "text",
+          "analyzer": "norwegian"
+        },
+        "dokumentDato": {
+          "type": "date"
+        },
+        "sammendrag": {
+          "type": "text",
+          "analyzer": "norwegian"
+        },
+        "mediaId": {
+          "type": "text",
+          "analyzer": "norwegian"
+        },
+        "bruker": {
+          "type": "keyword",
+          "store": true
+        },
+        "oppdatert": {
+          "type": "boolean"
+        },
+        "evaluert": {
+          "type": "boolean"
+        },
+        "publisert": {
+          "type": "boolean"
+        },
+        "unntattOffentlighet": {
+          "type": "boolean"
+        },
+        "ukurantFormat": {
+          "type": "boolean"
+        },
+        "handskrevet": {
+          "type": "boolean"
+        },
+       "textcontainer":{
+          "type":"text",
+          "fielddata": true,          
+          "analyzer":"standard"
+        }        
+      }
+    }
+  },
+  "settings": {
+    "index": {
+      "number_of_shards": "1",
+      "number_of_replicas": "1"
+    }
+  }
+}
+
+/*
+sammendrag
+avsender
+dokumenttype
+museumsnr
+gardsnavn
+kommune
+fylke
+tema
+avskrift
+merknad
+mottaker
+askeladd
+curl -XDELETE 'localhost:9200/topografi?pretty'
+
+
+*/
+
+//http://itfds-prod02.uio.no:8080/khm/topark/select/?q=*:*&wt=json&rows=4000&indent=true

@@ -1,0 +1,16 @@
+{
+"borettslag":{
+"strokeColor":"#FF0000",
+"strokeOpacity":"0.8",
+"strokeWeight":"3",
+"fillColor":"#00FF00",
+"fillOpacity":"0.8"
+},
+"foto":{
+   "icon":"photo.png"
+},
+"kirke":{
+   "icon":"church.png"
+}
+
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Søkning etter topark dokumenter</title>
+	<meta name="generator" content="BBEdit 9.6" />
+    <script type="text/javascript" src="search.js"></script>
+    <script type="text/javascript" src="tools.js"></script>
+    <script type="text/javascript" charset="utf-8" src="https://app.uio.no/hf/ft/jquery/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="wheel.js"></script>
+    <script type="text/javascript" charset="utf-8" src="aggregations.js"></script>
+    <script type="text/javascript" charset="utf-8" src="Elastic.js"></script>
+    <script type="text/javascript" charset="utf-8" src="JsonTool.js"></script>
+
+   <link href="https://app.uio.no/hf/ft/wheel/wordwheel.css" type="text/css" rel="stylesheet"/>
+   <link rel="stylesheet" type="text/css" href="topark.css"/>
+</head>
+<body onload='initialize()'>
+
+<div id="wordwheel_div"> <ul id= 'ul' class='wordwheel'>
+</ul> </div>
+
+<table id='tableHeader'>
+<tr>
+<td class='header' style='text-align:center;'>Søkning etter topark dokumenter - KHM</td>
+</tr>
+</table>
+<br><br>
+<table id='tableBody' class='tableBody'>
+<tr>
+<td style='text-align:left;width:200px'><span class='cellLabelClass'/>Fylke:</span><br>
+<select id='fylkeMeny' onChange='initSearch()'><option value= ''>Velg</option></td>
+<td style='text-align:left;width:200px'><span class='cellLabelClass'/>Kommune:</span><br>
+<select id='kommuneMeny' onChange='initSearch()'><option value= ''>Velg</option></td>
+<td style='text-align:left;width:200px'><span class='cellLabelClass'/>Bruker:</span><br>
+<select id='brukerMeny' onChange='initSearch()'><option value= ''>Velg</option></td>
+<td style='text-align:left;width:200px'><span class='cellLabelClass'/>Status:</span><br>
+<select id='missingFields' onChange='initSearch()'>
+  <option value= ''>Velg</option>
+  <option value= 'notUpdated'>Er ikke oppdatert</option>
+  <option value= 'readyEvaluate'>Klar for evaluering</option>
+  <option value= 'readyPublish'>Evaluert men mangler publisering</option>
+ </select>
+</td></tr>
+</table>
+<br><br>
+<table class='tableBody'>
+<tr>
+<td style='text-align:left;'><span class='cellLabelClass'/>Søk i felt:</span></td>
+<td><input type="text"id='freetext' autocomplete='off' onkeyup='changeWordwheel(event)' size='30'/> </td>
+<td><select id='searchSelect'>
+  <option value= 'gardsnavn'>Gårdsnavn</option>
+  <option value= 'id'>Id</option>
+  <option value= 'museumsnr'>Museumsnummer</option>
+  <option value= 'textcontainer'>Al tekst</option>
+  </select>
+<td><input type='button' class='buttonClass' value='Søk' onclick='initSearch()'></input></td></tr>
+<tr><td><input type='button' class='buttonClass' value='Nullstill' onclick='zeroSearch()'></input></td></tr>
+</table>
+
+<div id='bla'></div>
+<div id='resultTableDiv'></div>
+<br><br>
+<div id="includedContent"></div>
+
+<textarea id="debugarea" cols="80" rows="20" style="visibility:hidden"></textarea>
+</body>
+</html>

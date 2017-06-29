@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Registrering og opplastning av scannede dokumenter</title>
+	<meta name="generator" content="BBEdit 9.6" />
+    <script type="text/javascript" src="upload.js"></script>
+    <script type="text/javascript" src="tools.js"></script>
+    <script type="text/javascript" charset="utf-8" src="https://app.uio.no/hf/ft/jquery/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="https://app.uio.no/hf/ft/solr/SolrJsonClass.js"></script>
+    <link rel="stylesheet" type="text/css" href="editing/topark.css"/>
+</head>
+<body onload='initialize()'>
+<table id='tableHeader'>
+<tr>
+<td class='header' style='text-align:center;'>Opplastning og registrering av dokumenter til topografisk arkiv - KHM</td>
+</tr>
+</table>
+<br><br>
+
+<table id='tableBody'>
+<tr>
+<td style='text-align:left;'><span class='cellLabelClass'/>Lim inn url til gård-id mappe:</span></td>
+<td><input id='urlpath' type='text' class='textFieldClass' size='60' value='http://app.uio.no/khm/topark/card-index/'>&nbsp;&nbsp;<input type='button' class='buttonClass' value='Hent grunddata' onclick='getBasisData()'></input></td>
+</tr>
+<tr>
+<td style='text-align:left;'><span class='cellLabelClass'/>Fylke:</span></td>
+<td style='text-align:left;color:#FF0000'><span class='cellLabelClass' id='fylke'/></span></td>
+</tr>
+<tr>
+<td style='text-align:left;'><span class='cellLabelClass'/>Kommune:</span></td>
+<td style='text-align:left;color:#FF0000'><span class='cellLabelClass' id='kommune'/></span></td>
+</tr>
+<tr>
+<td style='text-align:left;'><span class='cellLabelClass'/>Gårdsnavn:</span></td>
+<td style='text-align:left;color:#FF0000'><span class='cellLabelClass' id='gardsnavn'/></span></td>
+</tr>
+<tr>
+<td style='text-align:left;'><span class='cellLabelClass'/>Gårdsnummer:</span></td>
+<td style='text-align:left;color:#FF0000'><span class='cellLabelClass' id='gardsnummer'/></span></td>
+</tr>
+<tr>
+<td style='text-align:left;'><span class='cellLabelClass'/>Gårds id:</span></td>
+<td style='text-align:left;color:#FF0000'><span class='cellLabelClass' id='gardsid'/></span></td>
+</tr>
+<tr>
+<td style='text-align:left;'><span class='cellLabelClass'/>latitude:</span></td>
+<td style='text-align:left;color:#FF0000'><span class='cellLabelClass' id='latitude'/></span></td>
+</tr>
+<tr>
+<td style='text-align:left;'><span class='cellLabelClass'/>longitude:</span></td>
+<td style='text-align:left;color:#FF0000'><span class='cellLabelClass' id='longitude'/></span></td>
+</tr>
+<tr>
+<td style='text-align:left;'><span class='cellLabelClass'/>Regirstrerte pdf'er:</span></td>
+<td style='text-align:left;color:#FF0000'><select id='registeredPDF'></select></td>
+</tr>
+
+
+<tr>
+<td style='text-align:left;'><span class='cellLabelClass'/>Hent løbenummer til dokumentets filnavn:</span>&nbsp;&nbsp;<input type='button' class='buttonClass' value='Hent løbenummer' onclick='getNewNumber()'></input></td>
+<td><input id='idnumber' type='text' class='textFieldClass' size='20'></td>
+</tr>
+
+<tr>
+<td colspan='2'/><hr/></td>
+</tr>
+
+
+<tr>
+<td colspan='2' style='text-align:center;'><input type='button' class='buttonClass' id='createButton' value='Opprett post' onclick='createRecord()'></input></td>
+</tr>
+
+</table>
+</body>
+</html>

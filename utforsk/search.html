@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Søking i topografisk arkiv - KHM</title>
+	<meta name="generator" content="BBEdit 9.6" />
+    <script type="text/javascript" src="search.js"></script>
+    <script type="text/javascript" src="tools.js"></script>
+    <script type="text/javascript" charset="utf-8" src="https://app.uio.no/hf/ft/jquery/jquery.js"></script>
+    <!--script type="text/javascript" charset="utf-8" src="https://app.uio.no/hf/ft/solr/SolrJsonClass.js"></script-->
+    <script type="text/javascript" charset="utf-8" src="Elastic.js"></script>
+    <script type="text/javascript" charset="utf-8" src="wheel.js"></script>
+    <script type="text/javascript" charset="utf-8" src="aggregations.js"></script>
+    <script type="text/javascript" charset="utf-8" src="JsonTool.js"></script>
+    <link rel="stylesheet" type="text/css" href="topark.css"/>
+   <link href="https://app.uio.no/hf/ft/wheel/wordwheel.css" type="text/css" rel="stylesheet"/>
+    
+    
+</head>
+<body onload='initialize()'>
+<table id='tableHeader'>
+<tr>
+<td colspan='3' class='header'style="padding-bottom:10px" >Kulturhistorisk museum - topografisk arkiv -utforsk</td>
+</tr>
+</table>
+<div id="wordwheel_div"> <ul id= 'ul' class='wordwheel'>
+</ul> </div>
+<br>
+
+<table class='tableBody'>
+<tr>
+<td colspan='4'><img src='uio_segl.png' height='60px'></td>
+</tr>
+<tr>
+<td><input type="text" id="freetext" autocomplete='off' onkeyup='changeWordwheel(event)' placeholder="Fritekst søk"></td>
+<td ><select id='searchSelect' onChange="initSearch()">
+           <option value= 'textcontainer'>Alle felter</option>
+           <option value= 'gardsnavn'>Gårdsnavn</option>
+           </select>
+</td></tr>
+<tr>
+<td style='text-align:left;width:200px'><span class='cellLabelClass'/>Fylke:</span><br>
+<select id='fylkeMeny' onChange='initSearch()'><option value= ''>Velg</option></select></td>
+<td style='text-align:left;width:200px'><span class='cellLabelClass'/>Kommune:</span><br>
+<select id='kommuneMeny' onChange='initSearch()'><option value= ''>Velg</option></select></td>
+</tr>
+<tr>
+<td style='text-align:left;width:200px'><span class='cellLabelClass'/>Ti-års interval:</span><br>
+<select id='dokumentDato' onChange='initSearch()'><option value= ''>Velg</option></select></td>
+<td style='text-align:left;width:200px'><span class='cellLabelClass'/>Periode:</span><br>
+<select id='periode' onChange='initSearch()'><option value= ''>Velg</option></select></td>
+</tr>
+<tr><td><input type='button' onclick='initSearch()' value="Søk"></td>
+<td><input type='button' onclick='zeroSearch()' value="Nullstill"></td>
+</tr>
+
+</table>
+
+<div id='bla'></div>
+<div id='resultTableDiv'></div>
+<br><br>
+<div id="footer" style="margin-left:60px">
+<table class="table_footer" style="float:left;">
+          <tr>
+            <th style="text-align:left;">Responsible for this service</th>
+          </tr>
+          <tr>
+            <td style="text-align:left;"><a target='_blank' href="http://www.usit.uio.no/english/about/organisation/bps/rc/">Department for Research Computing</a></td>
+          </tr>
+          <tr>
+            <td style="text-align:left;">Data Capture and Collections Management Group</td>
+          </tr>
+ </table>
+</div>    <!--end#footer-->    
+
+<textarea id="debugarea" cols="80" rows="20" style="visibility:hidden"></textarea>
+</body>
+</html>

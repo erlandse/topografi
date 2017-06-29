@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="Cache-control" content="no-cache">
+	<title>Redigering av metadata</title>
+	<meta name="generator" content="BBEdit 9.6" />
+    <script type="text/javascript" src="edit.js"></script>
+    <script type="text/javascript" charset="utf-8" src="https://app.uio.no/hf/ft/jquery/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="tools.js"></script>
+    <script type="text/javascript" charset="utf-8" src="https://app.uio.no/hf/ft/tcal/tcal.js"></script>
+    <script type="text/javascript" charset="utf-8" src="Elastic.js"></script>
+    <script type="text/javascript" charset="utf-8" src="json2.js"></script>
+    <link rel="stylesheet" type="text/css" href="topark.css"/>
+    <link href="https://app.uio.no/hf/ft/tcal/tcal.css" type="text/css" rel="stylesheet"/>
+    
+</head>
+<body onload='initialize()'>
+<table id='tableHeader'>
+<tr>
+<td class='header' style='text-align:center;'>Tilføyelse av metadata til dokument i topografisk arkiv - KHM</td>
+</tr>
+</table>
+<br><br>
+
+<div id='wrapper'>
+<div id='tableone'>
+<table id='tableBody'>
+<tr>
+<td style='text-align:left;'><span class='cellLabelClass'/>Slette posten</span></td><td> <input type='button' id='deleteButton' value='Slett post' onclick='deletePost()'></input><br></td>
+</tr>
+<tr>
+<td style='text-align:left;'><span class='cellLabelClass'/>Fylke:</span></td>
+<td style='text-align:left;color:#FF0000'><span class='cellLabelClass' id='fylke'/></span></td>
+</tr>
+<tr>
+<td style='text-align:left;'><span class='cellLabelClass'/>Kommune:</span></td>
+<td style='text-align:left;color:#FF0000'><span class='cellLabelClass' id='kommune'/></span></td>
+</tr>
+<tr>
+<td style='text-align:left;'><span class='cellLabelClass'/>Gårdsnavn:</span></td>
+<td style='text-align:left;color:#FF0000'><span class='cellLabelClass' id='gardsnavn'/></span></td>
+</tr>
+<tr>
+<td style='text-align:left;'><span class='cellLabelClass'/>Gårdsnummer:</span></td>
+<td style='text-align:left;color:#FF0000'><span class='cellLabelClass' id='gardsnummer'/></span></td>
+</tr>
+<tr>
+<td style='text-align:left;'><span class='cellLabelClass'/>Gårds id:</span></td>
+<td style='text-align:left;color:#FF0000'><span class='cellLabelClass' id='gardsid'/></span></td>
+</tr>
+<tr>
+<td style='text-align:left;'><span class='cellLabelClass'/>Selve dokumentet:</span></td>
+<td style='text-align:left;color:#FF0000'><span class='cellLabelClass' id='pdffile'/></span></td>
+</tr>
+<tr>
+<td style='text-align:left;'><span class='cellLabelClass'/>Posisjon på kart:</span></td>
+<td style='text-align:left;color:#FF0000'><span class='cellLabelClass' id='kart'/></span></td>
+</tr>
+
+<tr>
+<td colspan='2'/><hr/></td>
+</tr>
+<tr>
+<td>Dato for dokument:&nbsp;&nbsp;</td><td><input type="text" style='background-color:#FFFFFF' size='10' name="dokumentDato"  id='dokumentDato' class="tcal" value="" /></td>
+</tr>
+<tr>
+<td style='text-align:left;'><span class='cellLabelClass'/>Askeladd-ID:</span></td>
+<td> <input type="text" id='askeladd' size='60'/> </td>
+</tr>
+<tr>
+<td style='text-align:left;'><span class='cellLabelClass'/>Museums-numre:</span></td>
+<td> <input type="text" id='museumsnr' size='60'/> </td>
+</tr>
+<tr>
+<td style='text-align:left;'><span class='cellLabelClass'/>Media-numre:</span></td>
+<td> <input type="text" id='mediaId' size='60'/> </td>
+</tr>
+<tr>
+<td style='text-align:left;'><span class='cellLabelClass'/>Avsender/Forfatter:</span></td>
+<td> <input type="text" id='avsender' size='60'/> </td>
+</tr>
+<tr>
+<td style='text-align:left;'><span class='cellLabelClass'/>Mottaker:</span></td>
+<td> <input type="text" id='mottaker' size='60'/> </td>
+</tr>
+
+<tr>
+<td style='text-align:left;'><span class='cellLabelClass'/>+Bruk/Bruksnummer:</td>
+<td></span><input type="text" id='bruk' size='30'/></span><input type="text" id='bruksnummer' size='10'/><input type='button' class='buttonClass' value='Legg til' onclick='addBruk()'></input></td>
+</tr>
+
+<tr>
+<td style='text-align:left;vertical-align:top;'><span class='cellLabelClass'/>Bruk på gården:</span></td>
+<td>
+<select id='brukene'>
+               </select><input type='button' class='buttonClass' value='Slett' onclick='deleteBruk()'></input></td>
+</tr>
+<tr>
+
+
+
+<tr>
+<td style='text-align:left;'><span class='cellLabelClass'/>Dokumenttype:</span></td>
+<td>
+<select id='dokumenttype'>
+               <option value= ''>Velg</option>
+               <option value='Rapport'>Rapport</option>
+               <option value='Innberetning'>Innberetning</option>
+               <option value='Brev'>Brev</option>
+               <option value='Notat'>Notat</option>
+               <option value='Tegning'>Tegning</option>
+               <option value='Kart'>Kart</option>
+               <option value='Dateringsrapport'>Dateringsrapport</option>
+               <option value='Telegram'>Telegram</option>
+               <option value='Telefaks'>Telefaks</option>
+               <option value='Utstillingstekst'>Utstillingstekst</option>
+               <option value='Avisutklipp'>Avisutklipp</option>
+               <option value='Forminneregister'>Forminneregister</option>
+               <option value='Funnliste'>Funnliste</option>
+               <option value='Manuskript'>Manuskript</option>
+               <option value='Referat'>Referat</option>
+               <option value='ØK-skjema'>ØK-skjema</option>
+               <option value='Byggevarsel'>Byggevarsel</option>
+               <option value='Artikkel'>Artikkel</option>
+               <option value='Søknad'>Søknad</option>
+               <option value='Skjøte'>Skjøte</option>
+               <option value='Spørreliste'>Spørreliste</option>
+               <option value='Protokollutskrift'>Protokollutskrift</option>
+               <option value='Diplom'>Diplom</option>
+               <option value='Reguleringsvedtak'>Reguleringsvedtak</option>
+               <option value='Følgeskriv'>Følgeskriv</option>
+               <option value='Reguleringsplan'>Reguleringsplan</option>
+               <option value='Rundskriv'>Rundskriv</option>
+               <option value='Publikasjon'>Publikasjon</option>
+               <option value='Kontrakt'>Kontrakt</option>
+               <option value='Målebrev'>Målebrev</option>
+               <option value='Koordinatliste'>Koordinatliste</option>
+               <option value='Prosjektplan'>Prosjektplan</option>
+               <option value='Feltdagbok'>Feltdagbok</option>
+               <option value='Innkalling'>Innkalling</option>
+               <option value='Anbefaling'>Anbefaling</option>
+               <option value='Kongelig resolusjon'>Kongelig resolusjon</option>
+
+               </select></td>
+</tr>
+<tr>
+<td style='text-align:left;vertical-align:top;'><span class='cellLabelClass'/>Periode:</span></td>
+<td>
+<select id='periode' multiple='multiple'>
+               <option value= ''>Velg</option>
+               <option value='725'>steinalder</option>
+               <option value='1264'>eldre steinalder</option>
+               <option value='50010'>tidligmesolitikum</option>
+               <option value='50011'>mellommesolitikum</option>
+               <option value='50012'>senmesolitikum</option>
+               <option value='1265'>yngre steinalder</option>
+               <option value='1266'>tidligneolitikum</option>
+               <option value='1267'>mellomneolitikum</option>
+               <option value='1268'>senneolitikum</option>
+               <option value='941'>bronsealder</option>
+               <option value='1269'>eldre bronsealder</option>
+               <option value='1270'>yngre bronsealder</option>
+               <option value='50419'>samisk jernalder</option>
+               <option value='1065'>jernalder</option>
+               <option value='988'>eldre jernalder</option>
+               <option value='998'>førromersk jernalder</option>
+               <option value='709'>romertid</option>
+               <option value='990'>eldre romertid</option>
+               <option value='1271'>yngre romertid</option>
+               <option value='853'>folkevandringstid</option>
+               <option value='142'>yngre jernalder</option>
+               <option value='1272'>merovingertid</option>
+               <option value='836'>vikingtid</option>
+               <option value='172'>middelalder</option>
+               <option value='1273'>tidligmiddelalder</option>
+               <option value='1274'>høymiddelalder</option>
+               <option value='648'>senmiddelalder</option>
+               <option value='513'>nyere tid</option>
+               <option value='50009'>annen</option>
+
+               </select></td>
+</tr>
+
+<tr>
+<td style='text-align:left;'><span class='cellLabelClass'/>Tema/tittel:</span></td>
+<td> <input type="text" id='tema' size='60'/> </td>
+</tr>
+<tr>
+<td style='text-align:left;vertical-align:top;'><span class='cellLabelClass'/>Sammendrag:</span></td>
+<td><textarea id='sammendrag' cols='60' rows='7'></textarea></td>
+</tr>
+<tr>
+<td style='text-align:left;vertical-align:top;'><span class='cellLabelClass'/>Merknad:</span></td>
+<td><textarea id='merknad' cols='60' rows='7'></textarea></td>
+</tr>
+<tr>
+<td style='text-align:left;vertical-align:top;'><span class='cellLabelClass'/>Avskrift:</span></td>
+<td><textarea id='avskrift' cols='60' rows='7'></textarea></td>
+</tr>
+
+<tr>
+<td style='text-align:left;' colspan='2'><span class='cellLabelClass'/>Unntatt offentlighet:</span>&nbsp;<input type='checkbox' id='unntattOffentlighet'></input>&nbsp;&nbsp;&nbsp;
+<span class='cellLabelClass'/>Ukurant format</span>&nbsp;<input type='checkbox' id='ukurantFormat'></input>&nbsp;&nbsp;&nbsp;
+<span class='cellLabelClass'/>Håndskrevet</span>&nbsp;<input type='checkbox' id='handskrevet'></input></td>
+</tr>
+<tr>
+<td style='text-align:left;'><span class='cellLabelClass'/>Registrert:</span></td><td> <input type='checkbox' id='oppdatert'></input></td>
+</tr>
+<tr>
+<td style='text-align:left;'><span class='cellLabelClass'/>Evaluert</span></td><td> <input type='checkbox' id='evaluert'></input></td>
+</tr>
+<tr>
+<td style='text-align:left;'><span class='cellLabelClass'/>Publisert</span></td><td> <input type='checkbox' id='publisert'></input></td>
+</tr>
+
+<tr>
+<td colspan="2" style='text-align:center;'> <input type='button' id='saveButton' class='buttonClass' value='Lagre posten' onclick='savePost()'></input>&nbsp;&nbsp;&nbsp;<input type='button' class='buttonClass' value='Neste ikke oppdaterte post til gården' onclick='nextNotUpdatedDocument()'></input></td>
+</tr>
+
+</table>
+</div><!--tableone-->
+
+<div id='pdfpage'>
+</div>
+
+</div><!--wrapper-->
+</body>
+</html>

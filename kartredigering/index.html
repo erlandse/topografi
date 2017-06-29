@@ -1,0 +1,67 @@
+<html>
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Edit polygons and points</title>
+
+</head>
+ <script type="text/javascript" src="jquery.js"></script>
+ <script type="text/javascript" src="http://code.google.com/apis/gears/gears_init.js"></script>
+ <script type="text/javascript" src="index.js"></script>
+ <script type="text/javascript" src="Elastic.js"></script>
+ <script type="text/javascript" src="aggregations.js"></script>
+<link href="polygon.css" type="text/css" rel="stylesheet"/>
+
+<body onload="initialize()">
+
+<div class="gridContainer"> 
+<table width='100%'class='top'>
+<tr>
+  <td colspan="2" id="logo"><h1 class='top'>Edit polygons and points</h1></td></tr>
+</table>
+
+<br><br><br><br>
+<table class='tableClass'>
+    <tr><td colspan='2'><img src='map.png'><br><br></td></tr> 
+    <tr>  <td>Place/Address:</td>
+            <td><input size="30" name="searchField" id="searchField" type="text" autocomplete="off" onkeyup="checkInput(event)"></input></td>
+    </tr>
+    <tr>  <td>Projects:</td><td><select id='applicationSelect'></select></td>
+    </tr>
+    <tr>
+       <td>Zoom level:</td>
+       <td><select id='zoomLevel'>
+            <option value="3">Continent</option>
+            <option value="5">Large country (Norway)</option>
+            <option value="7">Small country (Denmark)</option>
+            <option value="10">Municipality</option>
+            <option value="15">City quarter</option>
+          </select>        
+       <input type='button' class='button' value='Search' onclick='search()'/></td>
+   </tr>
+    <tr><td colspan='2'><hr></td></tr>
+    <tr><td colspan='2' style='text-align:center;'><input type='button' value='Remove projects and/or layers' onclick='window.location="delete.html"'></td></tr>
+    
+    
+  </table>
+
+
+</div>
+
+<div id="footer"> <img src="uio_segl.png" alt=""> 
+<table style="float:right;font-size:12px">
+          <tr>
+            <th style="text-align:left;">Responsible for this service</th>
+          </tr>
+          <tr>
+            <td style="text-align:left;"><a href="http://www.usit.uio.no/english/about/organisation/bps/rc/rss/index.html">Research Support Services Group</a></td>
+          </tr>
+          <tr>
+            <td style="text-align:left;">Department for Research Computing</td>
+          </tr>
+ </table>
+      </div>    <!--end#footer--> 
+   <br><br>
+
+</body>
+</html>

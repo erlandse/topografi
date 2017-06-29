@@ -1,0 +1,70 @@
+<html>
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Digitalt feltarkiv - søk i kart</title>
+ <script type="text/javascript" src="SolrJsonClass.js"></script>
+ <script type="text/javascript" src="jquery.js"></script>
+ <script type="text/javascript" src="index.js">
+ <script type="text/javascript" src="json2.js"></script>
+
+</head>
+
+
+</script>
+<link href="polygon.css" type="text/css" rel="stylesheet"/>
+
+<body onload="initialize()">
+
+
+<table id='tableHeader'>
+<tr>
+<td colspan='3' class='header'style="padding-bottom:10px;padding-left:60px;" >Kulturhistorisk museum - topografisk arkiv - søk i kart</td>
+</tr>
+</table>
+<br>
+<table class='tableBody'>
+<tr>
+<td><img src='khm_uio_segl.png' height='60px'></td>
+</tr>
+</table>
+<br>
+<table class='tableClass'>
+    <tr><td colspan='2'><img src='map.png'><br><br><br><br></td></tr> 
+    <tr>  <td>Adresse:</td>
+            <td><input size="30" name="searchField" id="searchField" type="text" autocomplete="off" onkeyup="checkInput(event)"></input></td>
+    </tr>
+    <tr>
+       <td>Zoom nivå:</td>
+       <td><select id='zoomLevel'>
+            <option value="10">Kommune</option>
+            <option value="15">Bydel</option>
+          </select>        
+       </td>
+   </tr>
+   <tr>
+   <td></td><td style="text-align:left;"><br><input type='button' class='button' value='Slå opp i kart' onclick='search()'/></td>
+   </tr>
+    
+  </table>
+
+
+
+
+<div id="footer" style="margin-left:60px">
+<table class="table_footer" style="float:left;">
+          <tr>
+            <th style="text-align:left;">Responsible for this service</th>
+          </tr>
+          <tr>
+            <td style="text-align:left;"><a target='_blank' href="http://www.usit.uio.no/english/about/organisation/bps/rc/">Department for Research Computing</a></td>
+          </tr>
+          <tr>
+            <td style="text-align:left;">Data Capture and Collections Management Group</td>
+          </tr>
+ </table>
+</div>    <!--end#footer-->    
+<br><br>
+
+</body>
+</html>
