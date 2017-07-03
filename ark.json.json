@@ -1,0 +1,143 @@
+{
+  "mappings": {
+    "artifact": {
+      "properties": {
+        "id": {
+          "type": "keyword",
+          "store": true
+        },
+        "museum": {
+          "type": "keyword",
+          "store": true
+        },
+        "art_id": {
+          "type": "keyword",
+          "store": true
+        },
+        "museumsnr": {
+          "type": "keyword",
+          "store": true
+        },
+        "unr": {
+          "type": "keyword",
+          "index": "no",
+          "store": true
+        },
+        "museumsnr_tall": {
+          "type": "keyword",
+          "store": true
+        },
+        "materiale": {
+          "type": "keyword",
+          "store": true
+        },
+        "gjenstandstype": {
+          "type": "keyword",
+          "store": true
+        },
+        "museum_gjenstandid": {
+          "type": "keyword",
+          "store": true
+        },
+        "enhets_id": {
+          "type": "keyword",
+          "store": true
+        },
+        "geofacet": {
+          "type": "keyword",
+          "store": true
+        },
+        "fylke": {
+          "type": "keyword",
+          "store": true
+        },
+        "kommune": {
+          "type": "keyword",
+          "store": true
+        },
+        "gard": {
+          "type": "keyword",
+          "store": true
+        },
+        "gnr": {
+          "type": "keyword",
+          "index": "no",
+          "store": true
+        },
+        "bruk": {
+          "type": "keyword",
+          "index": "no",
+          "store": true
+        },
+        "bnr": {
+          "type": "keyword",
+          "index": "no",
+          "store": true
+        },
+        "lokalitetsid": {
+          "type": "keyword",
+          "index": "no",
+          "store": true
+        },
+        "form": {
+          "type": "keyword",
+          "index": "no",
+          "store": true
+        },
+        "periode": {
+          "type": "keyword",
+          "store": true
+        },
+        "funnkategori": {
+          "type": "keyword",
+          "store": true
+        },
+        "fotoid": {
+          "type": "keyword",
+          "index": "no",
+          "store": true
+        },
+        "gjenstandsbeskrivelse": {
+          "type": "text",
+          "fielddata": true,
+          "analyzer": "standard"
+        },
+        "tilveksttekst": {
+          "type": "keyword",
+          "index": "no",
+          "store": true
+        },
+        "presisjon": {
+          "type": "keyword",
+          "index": "no",
+          "store": true
+        },
+        "fotograf": {
+          "type": "keyword",
+          "index": "no",
+          "store": true
+        },
+        "pdfid": {
+          "type": "keyword",
+          "index": "no",
+          "store": true
+        },
+        "funnar": {
+          "type": "keyword",
+          "index": "no",
+          "store": true
+        },
+        "lokation": {
+          "type": "geo_point"
+        }
+      }
+    }
+  },
+  "settings": {
+    "index": {
+      "number_of_shards": "1",
+      "number_of_replicas": "1"
+    }
+  }
+}
+//http://itfds-prod02.uio.no:8080/khm/ark/select/?q=*:*&wt=json&rows=4000&indent=true
